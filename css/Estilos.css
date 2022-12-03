@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root{
+    --green1: hsl(81, 57%, 48%);
+    --green2: hsl(105, 45%, 34%);
+    --brown1: hsl(23, 75%, 33%);
+    --brown2: hsl(22, 76%, 27%);
+    --gray1: hsl(113, 5%, 70%);
+    --gray2: hsl(0, 0%, 29%);
+    --text-white: hsl(0, 0%, 0%);
+    --text-light-gray: hsl(0, 0%, 0%);
+    --glass-bg-color: hsla(0, 0%, 100%, 0.25);
+    --border-color: hsla(0, 5%, 69%, 0.979);
+    --blur: blur(10px);
+    --button-hover-color: hsla(81, 57%, 48%);
+    --body-bg-color: hsl(90, 6%, 88%);
+    --text-button: hsl(0, 0%, 100%);
+}
+
+.img{
+    width: 350px;
+    display: flex;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*color fondo estilo letra*/
+body{
+    background-color: var(--body-bg-color);
+    color: var(--text-light-gray);
+    font-family: 'Poppins', sans-serif; 
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+
+/* difuminados*/
+body::after,
+body::before{
+    content: '';
+    position: fixed;
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(150px);
+    opacity: 0.5;
+}
+/*circulos difuminados fondo*/
+body::before{
+    background-color: var(--brown1);
+    left: 0;
+    bottom: 0;
+    transform: translate(-50%);
+}
+body::after{
+    background-color: var(--brown2);
+    right: 0;
+    top: 0;
+    transform: translate(50%);
+}
+/*Contenedor borde*/
+.form-content .box{
+    border-color: var(--glass-bg-color);
+    border: 1px solid var(--border-color);
+    padding: 40px 50px;
+    border-radius: 20px;
+    backdrop-filter: var(--blur);
+}
+/* contenedor ancho*/
+.form-content{
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+    z-index: 1;
+}
+/*centrar pantalla inicio sesion*/
+.form-main{
+    min-height: 100vh;
+    padding: 60px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+/*orientacion bienvenido*/
+.form-content h3{
+    font-size: 28px;
+    text-align: center;
+    line-height: 1.2;
+    color: var(--text-white);
+    font-weight: 500;
+}
+/*olvidado passw crear cuenta*/
+a{
+    text-decoration: none; 
+    font-weight: 500;
+    display: inline-block;
+}
+.gradient-text{
+    background: linear-gradient(to right, var(--green1), var(--green2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/*circulos*/
+.form-content .circle-3,
+.form-content .circle-2,
+.form-content .circle-1{
+    position: absolute;
+    background: linear-gradient(to right, var(--brown1), var(--brown2));
+    border-radius: 50%;
+    z-index: -1;
+}
+.form-content .circle-1{
+    height:50px;
+    width: 50px;
+    right: 10;
+    top: 1;
+    transform: translateX(20%);
+    
+}
+.form-content .circle-2{
+    height: 80px;
+    width: 80px;
+    right: 0;
+    bottom: 0;
+    transform: translateX(40%);
+}
+.form-content .circle-3{
+    height: 50px;
+    width: 50px;
+    right: 0;
+    top: 30%;
+}
+/*tamaño espacio email-contrasña*/
+.form-content form{
+    margin: 25px 0 20px;
+}
+
+.form-content .input-box{
+    margin-bottom: 25px;
+}
+/*estilo color email-password*/
+.form-content ::placeholder{
+    color: inherit;
+    opacity: 1;
+}
+/* botones sin fondo email-contraseña*/
+.form-content .input-control{
+    display: block;
+    height: 45px;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    color: inherit;
+    font-weight: inherit;
+    font-family: inherit;
+    font-size: 16px;
+}
+/* quitar borde al pasar puntero*/
+.form-content .input-control:focus{
+    outline: none;
+}
+/* olvido contraseña lado */
+.form-content .input-link{
+    margin-top: 10px;
+    text-align: right;
+}
+
+/* inicio de sesion */
+.form-content .btn{
+    height: 45px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: capitalize;
+    font-family: inherit;
+    cursor: pointer;
+    border-radius: 25px;
+    user-select: none;
+    background: linear-gradient(to right, var(--brown1), var(--brown2));
+    border: none;
+    color: var(--text-white);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+/*transicion color btn iniciar sesion*/
+.form-content .btn::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    transition: background-color 0.5s ease;
+    z-index: -1;
+}
+.form-content .btn:hover::before{
+    background-color: var(--button-hover-color);
+}
+
+/*noteienesunacuenta*/
+.form-content p{
+    text-align: center;
+}
